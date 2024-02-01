@@ -1,8 +1,10 @@
 import g4f
 import g4f.api
+from fastapi import FastAPI
 import os
 
 ENV_PORT = os.getenv('PORT')
+app = FastAPI()
 
 def main():
     print(f'Starting server... [g4f v-{g4f.version.utils.current_version}]')
