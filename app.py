@@ -2,7 +2,7 @@ import g4f
 import g4f.api
 import os
 
-ENV_PORT = 5000 if os.getenv('PORT') else 5000
+ENV_PORT = os.getenv('PORT')
 
 def main():
     print(f'Starting server... [g4f v-{g4f.version.utils.current_version}]')
