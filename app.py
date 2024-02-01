@@ -1,16 +1,14 @@
-from re_gpt import SyncChatGPT
+import g4f
+import g4f.api
+import os
 
-session_token = ""
-conversation_id = None # conversation ID here
+ENV_PORT = os.getenv('PORT') if os.getenv('PORT') in os.getenv('PORT') else 3000
+
+def main():
+    print(f'Starting server... [g4f v-{g4f.version.utils.current_version}]')
+    g4f.api.Api(engine = g4f, debug = True).run(ip = "0.0.0.0:{ENV_PORT}")
+
+if __name__ == "__main__":
+    main()
 
 
-with SyncChatGPT(session_token=session_token) as chatgpt:
-    prompt = input("Enter your prompt: ")
-
-    if conversation_id:
-        conversation = chatgpt.get_conversation(conversation_id)
-    else:
-        conversation = chatgpt.create_new_conversation()
-
-    for message in conversation.chat(prompt):
-        print(message["content"], flush=True, end="")
