@@ -3,7 +3,7 @@ import g4f.api
 import os
 
 ENV_PORT = os.getenv('PORT')
-app = g4f.api
+app = g4f.api()
 
 def main():
     print(f'Starting server... [g4f v-{g4f.version.utils.current_version}]')
